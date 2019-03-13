@@ -117,7 +117,7 @@ Parent: {{.ParentCommit.ID}}{{end}}
 Started: {{prettyAgo .Started}}{{if .Finished}}
 Finished: {{prettyAgo .Finished}} {{end}}
 Size: {{prettySize .SizeBytes}}{{if .Provenance}}
-Provenance: {{range .Provenance}} {{.Repo.Name}}/{{.ID}} {{end}} {{end}}
+Provenance: {{range .Provenance}} {{.Commit.Repo.Name}}/{{.Branch.Name}}/{{.Commit.ID}} {{end}} {{end}}
 `)
 	if err != nil {
 		return err
